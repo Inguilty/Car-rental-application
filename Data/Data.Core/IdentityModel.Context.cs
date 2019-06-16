@@ -15,7 +15,7 @@ namespace AspNetIdentity.Data.Core
     
     public partial class CarRentalDbEntities : DbContext
     {
-        public CarRentalDbEntities()
+        internal CarRentalDbEntities()
             : base("name=CarRentalDbEntities")
         {
         }
