@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a783a52cec3431ca6eb74dfa9b0d7fe" Name="Diagram1" ZoomLevel="112">
+        <EntityTypeShape EntityType="CarRentalDbModel.Car" Width="1.5" PointX="10" PointY="3.75" IsExpanded="true" FillColor="Red" />
+        <EntityTypeShape EntityType="CarRentalDbModel.CarType" Width="1.5" PointX="12" PointY="4.25" IsExpanded="true" FillColor="Red" />
+        <EntityTypeShape EntityType="CarRentalDbModel.Office" Width="1.5" PointX="10" PointY="0.5" IsExpanded="true" FillColor="Red" />
+        <EntityTypeShape EntityType="CarRentalDbModel.OfficeTel" Width="1.5" PointX="11.875" PointY="1" IsExpanded="true" FillColor="Red" />
+        <EntityTypeShape EntityType="CarRentalDbModel.Reservation" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" FillColor="Red" />
+        <EntityTypeShape EntityType="CarRentalDbModel.Role" Width="1.5" PointX="5.25" PointY="0.5" IsExpanded="true" FillColor="Lime" />
+        <EntityTypeShape EntityType="CarRentalDbModel.User" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" FillColor="Lime" />
+        <EntityTypeShape EntityType="CarRentalDbModel.UserRole" Width="1.5" PointX="7.5" PointY="0.5" IsExpanded="true" FillColor="Lime" />
+        <AssociationConnector Association="CarRentalDbModel.FK__Car__CurrentLoca__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="CarRentalDbModel.FK__Car__TypeId__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="CarRentalDbModel.FK__Reservati__CarId__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="CarRentalDbModel.FK__Office__DefaultT__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="CarRentalDbModel.FK__Reservati__Picku__0F624AF8" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="CarRentalDbModel.FK__Reservati__Custo__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="CarRentalDbModel.FK__UserRole__RoleId__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="CarRentalDbModel.FK__UserRole__UserId__160F4887" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
