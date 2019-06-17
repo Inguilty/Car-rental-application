@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{BCDC3C46
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Shared", "Logic\Logic.Shared\Logic.Shared.csproj", "{B993006F-E480-44E7-9C49-82B19626E4CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Core", "Logic\Logic.Core\Logic.Core.csproj", "{B86EEA2F-2E8B-4802-BB89-E49110DBE1A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{B993006F-E480-44E7-9C49-82B19626E4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B993006F-E480-44E7-9C49-82B19626E4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B993006F-E480-44E7-9C49-82B19626E4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86EEA2F-2E8B-4802-BB89-E49110DBE1A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86EEA2F-2E8B-4802-BB89-E49110DBE1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86EEA2F-2E8B-4802-BB89-E49110DBE1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86EEA2F-2E8B-4802-BB89-E49110DBE1A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{907EEF8E-4316-4D6C-A2D7-9223EBFC243C} = {A41D8D0B-7259-4191-9AD3-E46D1EECA8A5}
 		{01572531-25D3-4DC7-AE13-DF40968FC160} = {A472B990-24D3-4C34-B967-CC08BF05C361}
 		{B993006F-E480-44E7-9C49-82B19626E4CF} = {BCDC3C46-CEAD-4259-8DC4-D9E0EF0BB899}
+		{B86EEA2F-2E8B-4802-BB89-E49110DBE1A1} = {BCDC3C46-CEAD-4259-8DC4-D9E0EF0BB899}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92F33B63-FFFD-40AF-B234-14A8344A63C6}

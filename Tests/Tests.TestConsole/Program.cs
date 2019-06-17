@@ -1,6 +1,10 @@
 ﻿using AspNetIdentity.Data.Core;
 using System;
 using System.Linq;
+using AspNetIdentity.Logic.Core.Extensions;
+using AspNetIdentity.Logic.Core.Utils;
+using AutoMapper;
+using AspNetIdentity.Logic.Shared.TransportModels;
 
 namespace Tests.TestConsole
 {
@@ -8,10 +12,7 @@ namespace Tests.TestConsole
     {
         static void Main(string[] args)
         {
-            using (var ctx = ContextUtil.Context)
-            {
-                Console.WriteLine(ctx.Roles.Count());
-            }
+            StartupUtil.InitLogic();
             Console.ReadKey();
         }
     }

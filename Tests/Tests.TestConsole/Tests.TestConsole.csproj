@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -61,6 +64,14 @@
     <ProjectReference Include="..\..\Data\Data.Core\Data.Core.csproj">
       <Project>{907a027c-0974-47fd-86f2-d4e106f8268a}</Project>
       <Name>Data.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic\Logic.Core\Logic.Core.csproj">
+      <Project>{b86eea2f-2e8b-4802-bb89-e49110dbe1a1}</Project>
+      <Name>Logic.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic\Logic.Shared\Logic.Shared.csproj">
+      <Project>{B993006F-E480-44E7-9C49-82B19626E4CF}</Project>
+      <Name>Logic.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
