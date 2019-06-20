@@ -13,7 +13,7 @@ namespace AspNetIdentity.Logic.Core.Repositories
         #region explicit interfaces
 
         /// <inheritdoc />
-        public async Task<long?> GetRoleIdByNameAsync(string roleName)
+        public async Task<int?> GetRoleIdByNameAsync(string roleName)
         {
             var result = await DbContext.Roles.SingleOrDefaultAsync(r => r.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase)).ConfigureAwait(false);
             return result?.Id;

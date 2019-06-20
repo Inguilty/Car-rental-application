@@ -14,7 +14,7 @@ namespace AspNetIdentity.Logic.Shared.Interfaces
         /// </summary>
         /// <param name="roleName">The case-insensitive name of the role.</param>
         /// <returns>The database id of the role or <c>null</c> if the role wasn't found.</returns>
-        Task<long?> GetRoleIdByNameAsync(string roleName);
+        Task<int?> GetRoleIdByNameAsync(string roleName);
 
         #endregion
     }

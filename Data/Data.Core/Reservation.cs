@@ -14,7 +14,7 @@ namespace AspNetIdentity.Data.Core
     
     public partial class Reservation
     {
-        public int ReservationId { get; set; }
+        public int Id { get; set; }
         public decimal Amount { get; set; }
         public System.DateTime PickupDate { get; set; }
         public System.DateTime ReturnDate { get; set; }

@@ -20,7 +20,7 @@ namespace AspNetIdentity.Data.Core
             this.Cars = new HashSet<Car>();
         }
     
-        public int TypeId { get; set; }
+        public int Id { get; set; }
         public string TypeLabel { get; set; }
         public string TypeDescription { get; set; }
     

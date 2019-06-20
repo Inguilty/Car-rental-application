@@ -1,0 +1,3 @@
+﻿1;1;User1;test@gmail.com;fsag4bnhfths4fabvdfsd=;true;false
+2;1;User2;user@gmail.com;b6umj54vbdr5e47vst4vd=;false;false
+3;2;Manager;manager@gmail.com;wt4efvswcsw4bwy53f=;true;true

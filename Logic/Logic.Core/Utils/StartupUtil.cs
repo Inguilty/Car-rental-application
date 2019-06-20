@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using AspNetIdentity.Data.Core;
 using AspNetIdentity.Logic.Core.Repositories;
+using AspNetIdentity.Logic.Core.TestRepositories;
 using AspNetIdentity.Logic.Shared.Interfaces;
 using AspNetIdentity.Logic.Shared.TransportModels;
 using Autofac;
@@ -27,17 +28,17 @@ namespace AspNetIdentity.Logic.Core.Utils
             var builder = new ContainerBuilder();
             if (runsUnderTest)
             {
-                //builder.RegisterType<TestRoleRepository>().As<IRoleRepository>();
-                //builder.RegisterType<TestUserRepository>().As<IUserRepository>();
+                var coreLogic = Assembly.GetExecutingAssembly();
+                builder.RegisterAssemblyTypes(coreLogic)
+                    .Where(t => t.Name.Contains("Test") && t.Name.EndsWith("Repository"))
+                    .AsImplementedInterfaces();
             }
             else
             {
-                builder.RegisterType<UserRepository>().As<IUserRepository>();
-                builder.RegisterType<RoleRepository>().As<IRoleRepository>();
-                //var coreLogic = Assembly.GetExecutingAssembly();
-                //builder.RegisterAssemblyTypes(coreLogic)
-                //    .Where(t => !t.Name.Contains("Test") && t.Name.EndsWith("Repository"))
-                //    .AsImplementedInterfaces();
+                var coreLogic = Assembly.GetExecutingAssembly();
+                builder.RegisterAssemblyTypes(coreLogic)
+                    .Where(t => !t.Name.Contains("Test") && t.Name.EndsWith("Repository"))
+                    .AsImplementedInterfaces();
             }
 
             Container = builder.Build();

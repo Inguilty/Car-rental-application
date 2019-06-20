@@ -15,21 +15,21 @@ namespace AspNetIdentity.Logic.Shared.Interfaces
      /// <param name="model">The model containing the user informations.</param>
      /// <param name="firstRoleName">The name of the first role for this user.</param>
      /// <returns>The database id of the new user or <c>null</c> if the operation fails.</returns>
-        Task<long?> AddUserAsnyc(UserTransportModel model, string firstRoleName);
+        Task<int?> AddUserAsnyc(UserTransportModel model, string firstRoleName);
 
         /// <summary>
         /// Retrieves a list of all role names the user is member of.
         /// </summary>
         /// <param name="userId">The database id of the user.</param>
         /// <returns>The list of role names.</returns>
-        Task<IEnumerable<string>> GetRoleNamesAsync(long userId);
+        Task<IEnumerable<string>> GetRoleNamesAsync(int userId);
 
         /// <summary>
         /// Retrieves a single user by searching for a given <paramref name="id" />.
         /// </summary>
         /// <param name="id">The database id of the user.</param>
         /// <returns>The user information or <c>null</c> if the user wasn't found.</returns>
-        Task<UserTransportModel> GetUserByIdAsync(long id);
+        Task<UserTransportModel> GetUserByIdAsync(int id);
 
         /// <summary>
         /// Retrieves a single user by searching for a given <paramref name="mailAddress" />.
@@ -37,13 +37,6 @@ namespace AspNetIdentity.Logic.Shared.Interfaces
         /// <param name="mailAddress">The mail address of the user.</param>
         /// <returns>The user information or <c>null</c> if the user wasn't found.</returns>
         Task<UserTransportModel> GetUserByMailAsync(string mailAddress);
-
-        /// <summary>
-        /// Retrieves a single user by searching for a given <paramref name="userName" />.
-        /// </summary>
-        /// <param name="userName">The user name of the user.</param>
-        /// <returns>The user information or <c>null</c> if the user wasn't found.</returns>
-        Task<UserTransportModel> GetUserByEmailAsync(string userName);
 
         /// <summary>
         /// Retrieves a list of all users currently stored in the database.
@@ -65,5 +58,12 @@ namespace AspNetIdentity.Logic.Shared.Interfaces
         /// <param name="userName">The user name to search for.</param>
         /// <returns><c>true</c> if the user was found otherwise <c>false</c>.</returns>
         Task<bool> UserExistsAsync(string userName);
+
+        /// <summary>
+        /// Retrieves a single user by searching for a given <paramref name="userName" />.
+        /// </summary>
+        /// <param name="userName">The user name of the user.</param>
+        /// <returns>The user information or <c>null</c> if the user wasn't found.</returns>
+        Task<UserTransportModel> GetUserByUserNameAsync(string userName);
     }
 }

@@ -60,6 +60,8 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="TestRepositories\TestRoleRepository.cs" />
+    <Compile Include="TestRepositories\TestUserRepository.cs" />
     <Compile Include="Utils\StartupUtil.cs" />
   </ItemGroup>
   <ItemGroup>

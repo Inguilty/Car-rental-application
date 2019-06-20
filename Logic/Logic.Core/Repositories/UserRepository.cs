@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
 using AspNetIdentity.Data.Core;
@@ -34,7 +35,7 @@ namespace AspNetIdentity.Logic.Core.Repositories
         #region explicit interfaces
 
         /// <inheritdoc />
-        public async Task<long?> AddUserAsnyc(UserTransportModel model, string firstRoleName)
+        public async Task<int?> AddUserAsnyc(UserTransportModel model, string firstRoleName)
         {
             var roleId = await _roleRepository.GetRoleIdByNameAsync(firstRoleName);
             if (!roleId.HasValue)
@@ -63,22 +64,37 @@ namespace AspNetIdentity.Logic.Core.Repositories
                 }
                 return newUser.Id;
             }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+
+                return default;
+            }
             catch (Exception ex)
             {
                 HandleException(ex);
-                return default(long?);
+                return default;
             }
         }
 
         /// <inheritdoc />
-        public async Task<IEnumerable<string>> GetRoleNamesAsync(long userId)
+        public async Task<IEnumerable<string>> GetRoleNamesAsync(int userId)
         {
             var user = await DbContext.Users.FindAsync(userId);
             return user?.UserRoles.Select(ur => ur.Role.Name);
         }
 
         /// <inheritdoc />
-        public async Task<UserTransportModel> GetUserByIdAsync(long id)
+        public async Task<UserTransportModel> GetUserByIdAsync(int id)
         {
             var user = await DbContext.Users.FindAsync(id).ConfigureAwait(false);
             return user?.ToTransportModel();
@@ -87,14 +103,16 @@ namespace AspNetIdentity.Logic.Core.Repositories
         /// <inheritdoc />
         public async Task<UserTransportModel> GetUserByMailAsync(string mailAddress)
         {
-            var user = await DbContext.Users.SingleOrDefaultAsync(u => u.Email.Equals(mailAddress, StringComparison.Ordinal)).ConfigureAwait(false);
+            var user = await DbContext.Users.SingleOrDefaultAsync(u => u
+                .Email.Equals(mailAddress, StringComparison.Ordinal)).ConfigureAwait(false);
             return user?.ToTransportModel();
         }
 
         /// <inheritdoc />
         public async Task<UserTransportModel> GetUserByUserNameAsync(string userName)
         {
-            var user = await DbContext.Users.SingleOrDefaultAsync(u => u.UserName.Equals(userName, StringComparison.Ordinal)).ConfigureAwait(false);
+            var user = await DbContext.Users.SingleOrDefaultAsync(u => u
+                .UserName.Equals(userName, StringComparison.Ordinal)).ConfigureAwait(false);
             return user?.ToTransportModel();
         }
 

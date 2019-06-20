@@ -20,7 +20,7 @@ namespace AspNetIdentity.Data.Core
             this.Offices = new HashSet<Office>();
         }
     
-        public int DefaultTel { get; set; }
+        public int Id { get; set; }
         public Nullable<int> Tel1 { get; set; }
         public Nullable<int> Tel2 { get; set; }
         public Nullable<int> Tel3 { get; set; }

@@ -20,7 +20,7 @@ namespace AspNetIdentity.Data.Core
             this.Reservations = new HashSet<Reservation>();
         }
     
-        public int CarId { get; set; }
+        public int Id { get; set; }
         public int CurrentLocationId { get; set; }
         public int TypeId { get; set; }
         public string Color { get; set; }
