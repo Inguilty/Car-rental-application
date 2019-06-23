@@ -1,5 +1,7 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using AspNetIdentity.Data.Core;
+using AspNetIdentity.Logic.Core.EventArgs;
 using AspNetIdentity.Logic.Shared.TransportModels;
 using Autofac;
 using AutoMapper;
@@ -11,6 +13,12 @@ namespace AspNetIdentity.Logic.Core.Utils
     /// </summary>
     public static class StartupUtil
     {
+        /// <summary>
+        /// Is fired before Autofac container is being built so that the reciever can do
+        /// Custom stuff with Autofac builder
+        /// </summary>
+        public static event EventHandler<ContainerBuilderEventArgs> AutofacBuilderReady;
+
         public static void InitLogic(bool runsUnderTest = false)
         {
             //Initialize Automapper
@@ -38,6 +46,7 @@ namespace AspNetIdentity.Logic.Core.Utils
                     .AsImplementedInterfaces();
             }
 
+            AutofacBuilderReady?.Invoke(null, new ContainerBuilderEventArgs(builder));
             Container = builder.Build();
         }
         /// <summary>

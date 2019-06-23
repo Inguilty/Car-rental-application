@@ -8,7 +8,7 @@ namespace AspNetIdentity.Logic.Core.Repositories
     /// <summary>
     /// The repository for accessing role data.
     /// </summary>
-    public class RoleRepository : BaseRespository, IRoleRepository
+    public class RoleRepository : BaseRepository, IRoleRepository
     {
         #region explicit interfaces
 

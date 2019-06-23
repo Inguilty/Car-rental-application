@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AspNetIdentity.Logic.Shared.Enumerations;
 using AspNetIdentity.Logic.Shared.TransportModels;
@@ -12,7 +9,7 @@ namespace AspNetIdentity.Logic.Shared.Interfaces
     {/// <summary>
      /// Creates a new user using the provided <paramref name="model" />.
      /// </summary>
-     /// <param name="model">The model containing the user informations.</param>
+     /// <param name="model">The model containing the user information.</param>
      /// <param name="firstRoleName">The name of the first role for this user.</param>
      /// <returns>The database id of the new user or <c>null</c> if the operation fails.</returns>
         Task<int?> AddUserAsnyc(UserTransportModel model, string firstRoleName);

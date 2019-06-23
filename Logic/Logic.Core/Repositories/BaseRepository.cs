@@ -11,7 +11,7 @@ namespace AspNetIdentity.Logic.Core.Repositories
     /// <summary>
     /// Abstract base class for all repositories.
     /// </summary>
-    public abstract class BaseRespository : IDisposable
+    public abstract class BaseRepository : IDisposable
     {
         #region member vars
 
@@ -63,7 +63,7 @@ namespace AspNetIdentity.Logic.Core.Repositories
             Trace.TraceError(ex.Message);
         }
 
-        ~BaseRespository()
+        ~BaseRepository()
         {
             Dispose(false);
         }

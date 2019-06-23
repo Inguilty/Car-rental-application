@@ -15,7 +15,7 @@ namespace AspNetIdentity.Logic.Core.Repositories
     /// <summary>
     /// The repository for accessing user data.
     /// </summary>
-    public class UserRepository : BaseRespository, IUserRepository
+    public class UserRepository : BaseRepository, IUserRepository
     {
         #region member vars
 
