@@ -1,8 +1,5 @@
 ﻿using System.Reflection;
 using AspNetIdentity.Data.Core;
-using AspNetIdentity.Logic.Core.Repositories;
-using AspNetIdentity.Logic.Core.TestRepositories;
-using AspNetIdentity.Logic.Shared.Interfaces;
 using AspNetIdentity.Logic.Shared.TransportModels;
 using Autofac;
 using AutoMapper;
